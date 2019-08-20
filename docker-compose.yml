@@ -11,7 +11,7 @@ services:
         expose:
             - "3000"
         environment:
-            - APP_ENV=${APP_ENV}
+            - DEBUG=${DEBUG}
             - HOST=${HOST}
             - PORT=3000
         command: "uwsgi --ini /usr/src/config/server.ini"

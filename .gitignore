@@ -3,3 +3,8 @@
 app/__pycache__
 .env
 logs/
+**venv*
+**__pycache__*
+app/api/uploads/
+app/tests/feature/*.json
+.vscode
