@@ -23,7 +23,12 @@ def httpmock():
     parser = Parser()
     parser.openFile(uploadedFile)
     examples = parser.getExamples()
-    return parser.toJSON(examples=examples)
+    requestnames = "<br>".join(
+        [example.getUri() for example in examples
+            if example.getUri() is not None]
+    )
+    # hell
+    return requestnames
 
 if __name__ == '__main__':
     print("Server running at" + os.environ['HOST'] + ":" + os.environ['PORT'])
