@@ -25,3 +25,7 @@ class Parser(object):
     def getExamples(self):
         examplewalker = example_walker(self.pm_content)
         return examplewalker.getExamples(flatten=True)
+    
+    def run(self):
+        examples = self.getExamples()
+        print(examples)

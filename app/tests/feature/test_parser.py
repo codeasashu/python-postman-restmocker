@@ -26,7 +26,7 @@ class ParserTestSuite(unittest.TestCase):
             parser.getContent()
         )
         f.close()
-    
+
     """Can read json from collection file"""
     def test_can_read_json_from_collection_file(self):
         parser = Parser()
@@ -34,12 +34,12 @@ class ParserTestSuite(unittest.TestCase):
         examples = parser.getExamples()
         urls = []
         for example in examples:
-            self.assertIsInstance(example, pmrequest)
-            urls.append(example.getUri())
+            self.assertIsInstance(example['request'], pmrequest)
+            urls.append(example['request'].getUri())
+
         self.assertCountEqual([
             'http://localhost/memcache/get',
-            'http://localhost/memcache/get?a=b',
-            None,
+            'http://localhost/memcache/get',
             'http://localhost/memcache/get_or_set'
         ], urls)
 

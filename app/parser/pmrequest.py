@@ -1,14 +1,36 @@
+import json
+
+
 class pmrequest(object):
 
-    def __init__(self, request, name=None):
+    def __init__(self, request):
         self.request = request
-        self.name = name
-    
-    def getName(self):
-        return self.name
 
     def getMethod(self):
         return self.request['method'] if 'method' in self.request else None
+
+    def getHeader(self, header=None):
+        if header is None:
+            raise Exception('Header key is required')
+        try:
+            for request_header in self.request['header']:
+                if header == request_header['key']:
+                    return request_header['value']
+        except Exception:
+            return None
+
+    def getBody(self):
+        returned_body = None
+        if 'body' in self.request:
+            if 'mode' in self.request['body']:
+                mode = self.request['body']['mode']
+                if mode in self.request['body']:
+                    returned_body = []
+                    for param in self.request['body'][mode]:
+                        if 'disabled' in param:
+                            continue
+                        returned_body.append(param)
+        return returned_body
 
     def getUri(self):
         urldict = self.request['url']

@@ -6,3 +6,4 @@ sys.path.insert(0, os.path.abspath(
 
 from parser import Parser
 from parser import pmrequest
+from parser import pmresponse
