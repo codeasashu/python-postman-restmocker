@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "8aa433ae-6dcb-467f-8f5e-df59a9855788",
+		"name": "Mock  APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "memcache",
+			"item": [
+				{
+					"name": "newmemcache",
+					"item": [
+						{
+							"name": "Get memcache data",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": [
+								{
+									"name": "Get memcache data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "data",
+													"value": "{\"key\": \"1_zoho_client_id\"}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost/memcache/get?",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"path": [
+												"memcache",
+												"get"
+											],
+											"query": [
+												{
+													"key": "a",
+													"value": "b",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"result\": {\n        \"1_zoho_access_token\": \"abc\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Get memcache data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\"key\": \"1_zoho_refresh_token\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://devapi.myoperator.co/memcache/get",
+							"protocol": "http",
+							"host": [
+								"devapi",
+								"myoperator",
+								"co"
+							],
+							"path": [
+								"memcache",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get memcache data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "c",
+											"value": "d",
+											"type": "text"
+										},
+										{
+											"key": "l",
+											"value": "m",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/memcache/get?",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"memcache",
+										"get"
+									],
+									"query": [
+										{
+											"key": "a",
+											"value": "b",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"result\": {\n        \"1_zoho_access_token\": \"abc\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Set Memcache data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": [
+						{
+							"name": "Set Memcache data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\"key\": \"1_zoho_access_token\", \"value\": \"123\", \"expiry\": null}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost/memcache/get_or_set",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"memcache",
+										"get_or_set"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
